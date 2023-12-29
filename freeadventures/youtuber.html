@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Пройдите капчу для получения кода.</title>
+
+  <style>
+
+    #captcha {
+
+      font-family: Arial, sans-serif;
+
+      font-size: 18px;
+
+      display: inline-block;
+
+      padding: 10px;
+
+      border: 1px solid #ccc;
+
+      position: relative;
+
+    }
+
+    #captcha-image {
+
+      display: inline-block;
+
+      vertical-align: middle;
+
+    }
+
+    #captcha-input {
+
+      display: inline-block;
+
+      vertical-align: middle;
+
+      margin-left: 10px;
+
+    }
+
+    #captcha-submit {
+
+      display: block;
+
+      margin-top: 10px;
+
+    }
+
+    #captcha-result {
+
+      margin-top: 10px;
+
+    }
+
+    .watermark {
+
+      position: absolute;
+
+      bottom: 10px;
+
+      right: 10px;
+
+      color: rgba(0, 0, 0, 0.3);
+
+      font-size: 14px;
+
+      font-weight: bold;
+
+      pointer-events: none;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="captcha">
+
+    <img id="captcha-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Captcha-smwm.svg/345px-Captcha-smwm.svg.png?20120120221757" alt="Изображение капчи">
+
+    <input id="captcha-input" type="text" placeholder="Введите текст с изображения">
+
+    <button id="captcha-submit" onclick="checkCaptcha()">Отправить</button>
+
+    <div id="captcha-result"></div>
+
+    <div class="watermark">FreeAdventures Captcha</div>
+
+  </div>
+
+
+  <script>
+
+    function checkCaptcha() {
+
+      var userInput = document.getElementById("captcha-input").value;
+
+      var resultElement = document.getElementById("captcha-result");
+
+      if (userInput === "smwm") {
+
+        setTimeout(function() {
+
+          resultElement.textContent = "Капча пройдена! Ваш код подтверждения: 64312478667834";
+
+        }, 1000);
+
+      } else {
+
+        setTimeout(function() {
+
+          resultElement.textContent = "Попробуйте еще раз.";
+
+        }, 1000);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
